@@ -8,7 +8,7 @@ const Home = {
     },
   },
   template: `
-    <h1>Home</h1>
+    <h1 style="font-family: sans-serif;">HESA FREDRIK</h1>
       <input @click="onSubmit" type="button" value="Starta spel" />
     
     `,
@@ -28,7 +28,7 @@ const Page = {
     };
   },
   template: `
-    <h1>Page</h1>
+    <h1>{{$route.params.page}}</h1>
     <form>
         <p v-for="question in questions">{{question.question}}</p>
         <label v-for="(answerOption, key) in answerOptions" for="answerOption"
@@ -42,7 +42,7 @@ const Page = {
 
 const routes = [
   { component: Home, path: '/' },
-  { component: Page, path: '/page' },
+  { component: Page, path: '/:page' },
 ];
 
 const router = VueRouter.createRouter({
